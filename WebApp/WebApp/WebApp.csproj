@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D17BBD86-6E30-432B-855C-D67EC85EAFAF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44371</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AngularDataController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularPart\.gitignore" />
+    <Content Include="AngularPart\karma.conf.js" />
+    <Content Include="AngularPart\src\app\about\about.component.html" />
+    <Content Include="AngularPart\src\app\index\index.component.html" />
+    <Content Include="AngularPart\src\favicon.ico" />
+    <Content Include="AngularPart\src\index.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="AngularPart\.browserslistrc" />
+    <Content Include="AngularPart\.editorconfig" />
+    <Content Include="AngularPart\.vscode\extensions.json" />
+    <Content Include="AngularPart\.vscode\launch.json" />
+    <Content Include="AngularPart\.vscode\tasks.json" />
+    <Content Include="AngularPart\angular.json" />
+    <Content Include="AngularPart\package-lock.json" />
+    <Content Include="AngularPart\package.json" />
+    <Content Include="AngularPart\README.md" />
+    <Content Include="AngularPart\src\assets\.gitkeep" />
+    <Content Include="AngularPart\src\styles.sass" />
+    <Content Include="AngularPart\tsconfig.app.json" />
+    <Content Include="AngularPart\tsconfig.json" />
+    <Content Include="AngularPart\tsconfig.spec.json" />
+    <Content Include="AngularPart\src\app\about\about.component.sass" />
+    <Content Include="json.json" />
+    <Content Include="AngularPart\src\app\index\index.component.sass" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\1bbf74d3e9b215eaaf0ab38bcfebed51ddc61f24\0.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\1bbf74d3e9b215eaaf0ab38bcfebed51ddc61f24\1.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\1bbf74d3e9b215eaaf0ab38bcfebed51ddc61f24\index.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\1bbf74d3e9b215eaaf0ab38bcfebed51ddc61f24\index.pack.old" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\0.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\1.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\10.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\11.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\12.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\2.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\3.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\4.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\5.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\6.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\7.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\8.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\9.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\index.pack" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\angular-webpack\34bc6525bc2359b15dfa5f47908cd974715ad74a\index.pack.old" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\001ec2fe25e2de6f53e9e1d12aeec72b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\01412b71084d8e3e751dad5d43e99224.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0388f57994dd5976b4fd81dd934b72ca.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\044fcf3fd37d96a663421498783f0adc.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\05c34c0227e153f750be44687c9e8c64.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\067fcb53d7423148d7db28a001fb66c9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0764b2a2b37b56e968e922e667a665c5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\076697b40696a9618f5f17a104b304e7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\07b2334f1d7122b39f78546acb70bb98.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\07ddaf688f9ffe07b7f9a52635f7b2d9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\09b641258ca8fefc62a7651d93eaa99c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0bfaf68f7b1f98111577b5517e958b34.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0c8d7bc7e53e3dacd8f5e347aabb71d1.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0d23f63d056596fcf0662dde2aca28f8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\0f45bb75d72d85f398c116076abc828a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1216ad0223dce3876984510c2a3d303e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\12414cd7622eef2441676734c9d7ceb5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\13fa38272b1e37865484de3274188fd4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\150b6a17d0383bc935a2b4d05949384f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\15bd26ace49d1454df50b1deb4bf0275.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\15ecf680ca43aa8d136c3f961a1613c6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1748de18c0114b0f9725b443bd636af8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1757997ddcdf3b572894c1a7b905566d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\17b4bf6fa9d12694a88f787d6183b575.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1841594d1d297bdb29a61048ce832690.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\19125af6306c6500f4266bcd8bc70371.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1af020aecea5bb4af9aab7f851f0eb81.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1c129bc693c07c40081767c1e735edaa.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1db52344e5d353e76a5f15533fd4e2a9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\1f5c29778c4f58ff0393faf4441b42b5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\21d102a3de7db37ff6dd5a17990735e8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\223fce97703d8dc2632ad2225ed54b2f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\22a1524a35cc049a69aa3ecf49afe0c6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\22a673d36b74df7abda9879017b5c7a5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\22d7d323269ef5404a7b50ee9f4790a1.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2318f04b9b80f2869605ee2c182ee57c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2516105387ce6c16a9b065e9698bf827.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\255fecab50fdbebc02d3093ef159c905.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\27130388799a7caee67143150faa6dcf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\27c8561dbb9eedc8dbb023f3edbcedd2.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\29a7a57744e04fd021876adb657be322.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2bd5025ce09fb009d5e3af4be93c0bfb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2be44f23c393d6de72e9f0e014b8ccec.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2c515f23e8ad38571e1370c9a86aa8da.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2c5358ea63f2f538c0afe9c23bcada39.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2ceadb8c0f45f336374a0c0e7b0d7870.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2e126bb335f06b49667d090b433d76fd.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2e83deb26c64c0c0c335d8d8b95375ad.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2ea2822bd8101fd4da46b2598c3b47f5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\2f34861ebfab84ed97343cc9eba719d6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\30e76a66edac89c466c34fa66570e178.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\310e643c6d1014d28954fc7d8effb230.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\31d6f1de6f6c4b0b97ae985df132fced.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\32fa5b3d5ec2996bfe87bc91b71ee4ab.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\34aeabdd506262de1b115bfbbdbfc6f6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\35579bd246c24f14ed17f9cc0d4ebfee.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3758e334985bc345061c6f2c7eb6d8e4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\394abb5a7d800841ba4571c423473f10.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3b7e0e5f8ee60d4d9ddc46135f5c4bb3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3b88561204c22a7d8968d60fc0884d5f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3c1d2d95df116708925836b9ca3f2df0.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3c9aea521195c693b6cf7e5f09c88fdb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3c9ec66ab8d5ea145d904f75164a4784.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3d80e7ff464df3c37c2187eee0b288a5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3f3b4d09da8f8f6d6bac05975f57224a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\3ffd23b69f28f81868eb753c533b03e4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\40667743ff1eb83028cd3867429c0a21.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\40ecd3363e8abbf3bae9722352959bac.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\41c3a5360ea45d3fb5be511e6345c9dd.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\438c1b18fd1eba095c57570550f2b9c4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\44a538454983acc384ea2e3b88b13e90.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\44bf703852e0a2a89046dca7dd6ff241.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\47d50fbb12a5f7e78c8b90c70cd0a726.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\48d77720ef106a603842a1630851927b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\49b1c9a8d9cdb1a0e96870cf75e52a03.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\4b98b5ee1b137a2975950dd8f71ccfbf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\4ba602e719e5a3d65f98aa580a850124.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\4ed355be80f26e021f9762ee568308b8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\4eeeb5b6afbb01208232024615faaf8f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\4ef5f1f0e19483c99ac9f9c3708c9b2a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5201c351c92e208f2088b6e32c5e0be9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\52aba978e38b98bdd77f0bedac4b0dc4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\52d97298fb0c8eebb9b0be2235bd37c6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5516c8503aeea9bbe937a1841fd6ce99.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\56f631878767714f81a9804770944dfb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5954df13a94de5beb60f1587f5555a1b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\597139bd6146dd0428433b5ecfffc665.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5b8879028bf0ea4a483c3e38d9dd1888.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5cc5c0ba055de2ba5eb4e152ea8ebe9d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5d9bf5b29d76ec5e7e9533f97be3eced.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5e9e33e2c89c1bc950a55e8b80ed2a12.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5eedb311fc6617799ca91b7edd8af303.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\5ffcedb594a95a35871001b35473a0d5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\60e1c131c847969564ce8e8ca8e5baf4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\629830baf7ac402a6de0eb3477cd2a39.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\62c26a1162ee8bc6a0007c92632169bc.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\648c484242be03db6c3b7e4a40d8c676.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6581e9218217acedbd6108d1702ee999.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6680cc84127dca278217698913c037aa.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6973e26ad7bac22af96bc6601a89d6bf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6a3321193b790253f3eecbf237f7fce6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6b13118b5148a2745bed0bd213515f9b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6b1cab5e98bf1636c5774aedaa9fa89f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6cb5c78af1e911d53e6c411e73ac77f5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6ece7e97ff1c40d04c7506805e8b5e6a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\6fc0341ea1eb9d86dc6a8347952236ec.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\700b80dc0a2a7316ef9d53ffe1a67ccf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7186e4054db6142d4f84184027aff8bb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\74c0eb80e30b947dc026554226135a3e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\750451b5680c4f18b47558676fc249f2.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\754d57c886fdbf91826edc848c1798b3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\77d3ced35c61f5685e20f7ec5d916bb7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7803c8efdbd625f17592259a09011516.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\78e4e25bbc685e52c6e9fe7c9525919f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7aadf76104e2d37c03867d1806c7d86c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7e41e1454723861155950fe379ce861b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7e858401e220d751f832a57948706caf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\7f376792bd9c84d40d004fd5503cba1f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\810029ecd4367465fbb64b10135ff7e7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\81af01a2e0c0739cc6012733fb820816.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8215ab92d79c38c7c15291b301cd21cf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\82297fddec6a3f35895ac1e738a5cbac.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\82bb37d0a3dd968342379c91bf946fc9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8316e9242470d793c6a41383f55d7974.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\83699115c88b525e1ebfae3d15ca1f1c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\83ffbbc70adf49c5efe83e678d6b699d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\880af2df560a9435c524cec98830239a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\88177d7575a9771d3049fe68e867b53d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\88f64ede7d9b5a1e53a2778aa23b06cf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8b926e849d25e8bc70e61eb4625c6a74.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8c18a97bb1f5b1807eea4ca9434adf00.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8d03b63edc32d8ec42dbd64cc55a6c6e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\8d5e3567341e1f0b4cf3f0a9c55187a9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\900e88a40a00440477ae3476577aec1e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\907020c2c53808d28aacf98556a3aedd.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\90d5876796f1079a6422bae5b10688f3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\90d9bcf5fdbe79e4ce12d3fa5567b426.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\90f8ea108755400654093036ff8540ad.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9234965a9ab74a8e699a7d615d7a1155.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\943f3683bbc463eae65f6778f8e69d5c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9688551eb102d68382714714f761487e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\97f5b9410844a61f5704facb27f6dd3a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9a0f32df1352f443d8ce6ba831829f0a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9a266f18675dd138ba9ca240d8e8da1a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9a6a8692940b4a74a1da74b1b3a1f6c2.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9c6c820638d6c8ff2a28d66dad081768.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9e23dffb4839b38c0d6f4d6b81e71817.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9e65e7964d85e145fe80516efc1b6de9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9f3b8622ac1a02795f3a74e0d40b8c77.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9f8b6ff452a8ad23e7e30604e4a2141c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\9fee8f74faadab1c91ac6e03c98f7757.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a3ac2dac4ef2617387d1b362806e083e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a47ca107601f45bb3b1930a876c8feca.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a558285154ed524d269e6290c139bd35.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a608590630f847c18b2619cc85c30db3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a74bf560b0f363446efb68fc1314e5e7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a79f39971752f1055aa6d985be688b2e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a881e998964cb72177e50cc9e0b340ee.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a9000660d1b75b8e0a2c47f325ce7e76.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\a9836258e47abdbff46e3ec0c628f53c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ab752b692f5d9c2f9b5e47d2a18761da.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\abd00a0ffdd79df3e712bb954f0c1ba3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\acd8ad2a5b533587ce276f0849bef2ea.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ad95d923de488d843049c2c6a9f60a95.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ae191374481e898be4aabbd6e9a18692.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\af50ea818e6beb79e1bfd78d20bea16a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b017233b0312febd9b04a6033e3b2e57.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b039423677a305380659a5cb543adafc.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b0c9f94342eb9c7c0bef3cfa75969cb3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b0ebafb2cdd8ae283a3fd6437d81bc3f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b1c491f7bad35071d8e9a784c9c82269.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b37ae5faf1a4c5c59bef30de8301adaf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b5def6f69d24ac2d091dc813533c29f3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b5e9f3e7d170e59cd74921a0ec617187.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b753b9f35c419dc96543317419aa959b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b85c9570ec1e370654ba8c5adf2ca63e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\b8f94ee7cac19677a89fa32833438964.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ba0146fe29606f6f2ac1aafe28575fb7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bb141f4847272983b214365beeef830d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bb92c04d26957e7f2bc3eeab8b77b756.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bba7b1feef0deb43cc4b0d1314786079.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bbe3449c422e612c94c99965e51bc45e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bbeee2a4eede7cee00ff93654bdc6cf5.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bcd5158868dad2d752af2aec3ecdfecb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bd2722d996d13273aedd55619df3d434.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\bed7f40788d42b87294f039d976144e1.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c0d080b1d38b08078fd09ec5f20304f8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c1609ece199989abdf741537385284ad.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c16f23ce11ebdbba983e6e159ec96c80.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c227e14a3a3d71004f5b9ed26c9de458.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c37f42322f9f87c2cad948372fe60723.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c4f1a2ad5b2786cf3db67decb5bc7e9b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c5ff453752a1da0efbdfb31319ce23ef.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c6bac0c70ef27eba6f4e20a01506494d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c6e42ac8e336336c2f4fb34e1a3467f7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\c950fd0342062215d7c180df9f5bc00e.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ca612193657814223a4414862535f77a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\caca14d946583c570ef9e401e72146b7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ccf62d41b5a01c2d8d10f5a8fb239f60.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ce7b5c58519eccbfafc833957b7a221a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d00dc7e628304ab0aec54dda326d0e25.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d13478f6a4e2572dd0528cf8d35dfc50.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d1a146770f1acbd25030d197cbfb83b9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d244babccd04e2342ad0edc45794a927.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d2a03261613d0557d65d8af31f124743.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d2a89fd6e27ca083be5f3ef08dc12ecb.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d2ad61d320866739e22ea41c4a1e72b3.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d2f615793b48212e26b7bf9baca76443.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d31330a4afe79e1cdb4db4c7980ed10c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d62cfe7f645c2433a43aa18396e5faa9.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d8e5b84178fde0a94eed3c78752d68be.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d9ce8dec439784a090bde980efa2f6f4.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\d9e26391cbd2faee1f1389fe9b468e15.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\da4186df124230454e2d33f1a9d81bdf.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\db3789a9749ad7f08961758f77b8310b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\dcd64500badc113c2cc76aabfaa39bb7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\dce64e92fb2b06182a40b95f2ba8ae3a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\deb72240a07bfe330033890affc90ae0.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e04eda85ee241ac65db9adc813ae259f.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e0a53392c15c46482639c74c9f4e2131.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e0afee3d1d54814f7ff60323d8376d0a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e1b6cb2beb30732a283ed56382a78f42.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e27b3fda417c0b70b091621cb7ff2b4c.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e29b34c6b9c5a0a9ed7a041fce71d64a.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e3af557e34454a371ea5b5b1178dd47d.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e3e8bf2f4692e46856b12d77dbe52116.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e4092cd9025cd02ad918b760097c8448.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\e8ddcee6a8225bed91169c5512620830.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ebdc81dad575ae68b52582555c89a210.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ed582afb7ded04036d9f699e924605ad.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ee5903571bdc879bc3d512f69a5a6408.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f54ad7398e6e4dac023ac9c27dfe9780.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f60f5df52ab5b8d81d4a9ff7ec0b37ce.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f6f61bef9c8249db58464aec685343c8.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f880188987caa3fdf2d8b39097340335.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f8a62de4a60d765b99b920c11385dcff.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\f9ca3fbbf35d5da562670361f23cc743.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\fa96e15bd1dbaaf3e37df52f2db79f7b.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\fba93400eb89df48dac73f5e5f8d7101.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\fd3e5edd22abaf207b5e0cf3e26f0aa7.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\fdf2921d27414ea6048022656a0a9dd6.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\fe985c044c04747c492554f5efc22bda.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ff6022ef11c5f2ad89630054cf1d30ac.json" />
+    <Content Include="AngularPart\.angular\cache\13.2.6\babel-webpack\ffb68c282be984857baea359f64f5a83.json" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AngularData\Index.cshtml" />
+    <Content Include="Views\AngularData\About.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="AngularPart\emptyTS.ts" />
+    <TypeScriptCompile Include="AngularPart\src\app\about\about.component.ts" />
+    <TypeScriptCompile Include="AngularPart\src\app\app.module.ts" />
+    <TypeScriptCompile Include="AngularPart\src\app\index\index.component.ts" />
+    <TypeScriptCompile Include="AngularPart\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="AngularPart\src\environments\environment.ts" />
+    <TypeScriptCompile Include="AngularPart\src\main.ts" />
+    <TypeScriptCompile Include="AngularPart\src\polyfills.ts" />
+    <TypeScriptCompile Include="AngularPart\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50822</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44371/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.6.2\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
